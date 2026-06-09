@@ -12,7 +12,7 @@ class Solution {
                 left[i]=1;
             }
         }
-        System.out.println(Arrays.toString(left));
+       
         right[arr.length-1]=1;
         for(int i=arr.length-2;i>=0;i--){
             if(arr[i]>arr[i+1]){
@@ -24,13 +24,13 @@ class Solution {
                 
             }
         }
-        System.out.println(Arrays.toString(right));
+    
         int tot[]=new int[arr.length];
 
         for(int i=0;i<arr.length;i++){
             tot[i]=Math.max(left[i],right[i]);
         }
-        System.out.println(Arrays.toString(tot));
+        
         for(int i:tot){
             sum=sum+i;
         }
