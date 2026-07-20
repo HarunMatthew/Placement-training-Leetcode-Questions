@@ -7,10 +7,10 @@ class Solution {
     }
 
     public void backtrack(List<Integer> curr,int[] nums,int start,List<List<Integer>> result){
-        if(!result.contains(curr)){
-            result.add(new ArrayList<>(curr));
+        if(result.contains(curr)){
+           return; 
         }
-
+        result.add(new ArrayList<>(curr));
         for(int i=start;i<nums.length;i++){
             curr.add(nums[i]);
             backtrack(curr,nums,i+1,result);
