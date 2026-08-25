@@ -1,17 +1,17 @@
 class Solution {
+    int count =0;
     public int countArrangement(int n) {
         int nums[] = new int[n];
         int s = 1;
         for(int i = 0;i<nums.length;i++){
             nums[i] = s++; 
         }
-        List<List<Integer>> list = new ArrayList<>();
-        backtrack(list,new ArrayList<>(),nums,new boolean[nums.length]);
-        return list.size();
+        backtrack(new ArrayList<>(),nums,new boolean[nums.length]);
+        return count;
     }
-    public void backtrack(List<List<Integer>> list,List<Integer> curr,int[] nums,boolean[] visited){
+    public void backtrack(List<Integer> curr,int[] nums,boolean[] visited){
         if(nums.length == curr.size()){
-            list.add(new ArrayList<>(curr));
+            count++;
             return;
         }
         
@@ -26,7 +26,7 @@ class Solution {
             }
             visited[i] = true;
             curr.add(nums[i]);
-            backtrack(list,curr,nums,visited);
+            backtrack(curr,nums,visited);
             curr.remove(curr.size()-1);
             visited[i] = false;
         }
