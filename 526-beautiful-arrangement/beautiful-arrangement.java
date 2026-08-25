@@ -7,7 +7,6 @@ class Solution {
         }
         List<List<Integer>> list = new ArrayList<>();
         backtrack(list,new ArrayList<>(),nums,new boolean[nums.length]);
-        System.out.println(list);
         return list.size();
     }
     public void backtrack(List<List<Integer>> list,List<Integer> curr,int[] nums,boolean[] visited){
